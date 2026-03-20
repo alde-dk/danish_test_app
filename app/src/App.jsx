@@ -3,24 +3,34 @@ import { ProgressStats } from './components/ProgressStats'
 import { QuestionCard } from './components/QuestionCard'
 import { useDailyProgress } from './hooks/useDailyProgress'
 import quizData from '../data/output.json'
+import generatedQuizData from '../data/output_generated_questions.json'
 import './index.css'
 
 function App() {
   const { stats, recordAnswer } = useDailyProgress();
+  
+  // Combine questions inside component
+  const allQuestions = [
+    ...(quizData?.questions || []),
+    ...(generatedQuizData?.questions || [])
+  ];
+
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
 
   const pickRandomQuestion = useCallback(() => {
-    const questions = quizData.questions;
-    const randomIndex = Math.floor(Math.random() * questions.length);
-    setCurrentQuestion(questions[randomIndex]);
+    if (allQuestions.length === 0) return;
+    const randomIndex = Math.floor(Math.random() * allQuestions.length);
+    setCurrentQuestion(allQuestions[randomIndex]);
     setSelectedOption(null);
-  }, []);
+  }, [allQuestions]);
 
   // initial load
   useEffect(() => {
-    pickRandomQuestion();
-  }, [pickRandomQuestion]);
+    if (allQuestions.length > 0 && !currentQuestion) {
+      pickRandomQuestion();
+    }
+  }, [allQuestions, currentQuestion, pickRandomQuestion]);
 
   const handleOptionClick = (letter) => {
     if (selectedOption) return; // prevent double clicks
@@ -40,11 +50,19 @@ function App() {
       </header>
       
       <main>
-        <QuestionCard 
-          question={currentQuestion}
-          selectedOption={selectedOption}
-          onOptionClick={handleOptionClick}
-        />
+        {allQuestions.length === 0 ? (
+          <div style={{ textAlign: 'center', marginTop: '2rem', color: 'red' }}>
+            <h2>No questions loaded.</h2>
+            <p>Source 1: {quizData?.questions?.length || 0} questions</p>
+            <p>Source 2: {generatedQuizData?.questions?.length || 0} questions</p>
+          </div>
+        ) : (
+          <QuestionCard 
+            question={currentQuestion}
+            selectedOption={selectedOption}
+            onOptionClick={handleOptionClick}
+          />
+        )}
 
         {selectedOption && (
           <div className="next-container">
