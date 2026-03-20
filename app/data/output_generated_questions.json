@@ -1,0 +1,424 @@
+{
+  "questions": [
+    {
+      "file_name": "chapter1",
+      "question": "Hvem rejste den store Jellingsten omkring år 965?",
+      "question_number": "1",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Gorm den Gamle"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Harald Blåtand"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Knud den Store"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad betyder ordet 'Mark' i navnet Danmark?",
+      "question_number": "2",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Skovområde"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Grænseområde"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Handelsplads"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken lov fra 1241 indeholder sætningen 'Med lov skal man land bygge'?",
+      "question_number": "3",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Danske Lov"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Jyske Lov"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Grundloven"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad kaldtes den union, som Margrete 1. samlede Danmark, Norge og Sverige i i 1397?",
+      "question_number": "4",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Kalmarunionen"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Øresundsunionen"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Nordisk Råd"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvornår blev reformationen formelt gennemført i Danmark?",
+      "question_number": "5",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "1241"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "1536"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "1660"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken konge indførte enevælden i Danmark i 1660-61?",
+      "question_number": "6",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Christian 4."
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Frederik 3."
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Christian 7."
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilke områder måtte Danmark afstå til Sverige ved Roskilde-freden i 1658?",
+      "question_number": "7",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Norge og Island"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Slesvig og Holsten"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Skåne, Halland og Blekinge"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Fra hvilket år blev slavehandel forbudt i Danmark?",
+      "question_number": "8",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "1788"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "1803"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "1848"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvornår underskrev Frederik 7. Danmarks første frie forfatning (Grundloven)?",
+      "question_number": "9",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "5. juni 1849"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "9. april 1940"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "1. januar 1973"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad var resultatet af krigen i 1864?",
+      "question_number": "10",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Danmark vandt Slesvig tilbage"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Danmark mistede Slesvig, Holsten og Lauenborg"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Norge blev selvstændigt"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad kaldes den historiske aftale fra 1899, der danner grundlag for 'Den Danske Model'?",
+      "question_number": "11",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Kanslergadeforliget"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Septemberforliget"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Grundlovsforliget"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "I hvilket år fik danske kvinder valgret til Folketinget?",
+      "question_number": "12",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "1849"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "1901"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "1915"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad kaldes begivenheden i 1920, hvor Nordslesvig blev en del af Danmark igen?",
+      "question_number": "13",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Genforeningen"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Påskekrisen"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Befrielsen"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken dato blev Danmark besat af Tyskland under 2. Verdenskrig?",
+      "question_number": "14",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "1. september 1939"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "9. april 1940"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "5. maj 1945"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvornår blev Danmark officielt befriet fra den tyske besættelse?",
+      "question_number": "15",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "9. april 1940"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "29. august 1943"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "5. maj 1945"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken forsvarsalliance blev Danmark medlem af i 1949?",
+      "question_number": "16",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "FN"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "NATO"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Warszawa-pagten"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilket kammer i Rigsdagen blev afskaffet ved grundlovsændringen i 1953?",
+      "question_number": "17",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Folketinget"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Landstinget"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Sogne- og byrådene"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvornår trådte Danmark ind i EF (det nuværende EU)?",
+      "question_number": "18",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "1945"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "1973"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "1992"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvem blev Danmarks første kvindelige statsminister i 2011?",
+      "question_number": "19",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Pia Kjærsgaard"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Helle Thorning-Schmidt"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Mette Frederiksen"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilket land løsrev sig endegyldigt fra Danmark i 1944?",
+      "question_number": "20",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Norge"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Island"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Grønland"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    }
+  ]
+}

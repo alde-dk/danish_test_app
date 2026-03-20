@@ -10,7 +10,7 @@ export function QuestionCard({ question, selectedOption, onOptionClick }) {
         {question.question}
       </h2>
       <div className="options-list">
-        {question.options.map((opt) => {
+        {(question.options || []).map((opt) => {
           const isSelected = selectedOption === opt.option_letter;
           const isCorrectAnswer = opt.option_letter === question.answer_letter;
           
