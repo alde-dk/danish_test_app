@@ -17,6 +17,7 @@ load_dotenv()
 # Constants
 SOURCE_FILE = "src/extraction/chapter1.txt"
 OUTPUT_FILE = "app/data/output_generated_questions.json"
+REFERENCE_FILE = "app/data/output.json"
 MODEL_NAME = "gemini-flash-latest"
 
 class Option(BaseModel):
@@ -62,26 +63,38 @@ async def main_async():
         print("Please set your GOOGLE_API_KEY in the .env file.")
         return
 
-    # Load existing questions
-    existing_questions = []
+    # Load existing questions from both sources
+    existing_generated = []
     if os.path.exists(OUTPUT_FILE):
         try:
             with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
-                existing_questions = data.get("questions", [])
-            print(f"Loaded {len(existing_questions)} existing questions.")
+                existing_generated = data.get("questions", [])
+            print(f"Loaded {len(existing_generated)} existing generated questions.")
         except Exception as e:
             print(f"Warning: Could not load existing questions: {e}")
 
+    existing_reference = []
+    if os.path.exists(REFERENCE_FILE):
+        try:
+            with open(REFERENCE_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                existing_reference = data.get("questions", [])
+            print(f"Loaded {len(existing_reference)} existing reference questions.")
+        except Exception as e:
+            print(f"Warning: Could not load reference questions: {e}")
+
+    existing_question_texts = [q["question"] for q in existing_generated] + [q["question"] for q in existing_reference]
+
     # Determine starting question number
     start_num = 1
-    if existing_questions:
+    if existing_generated:
         try:
-            nums = [int(q["question_number"]) for q in existing_questions if q["question_number"].isdigit()]
+            nums = [int(q["question_number"]) for q in existing_generated if q["question_number"].isdigit()]
             if nums:
                 start_num = max(nums) + 1
         except Exception:
-            start_num = len(existing_questions) + 1
+            start_num = len(existing_generated) + 1
 
     print("Reading source text...")
     source_text = read_source_text(SOURCE_FILE)
@@ -93,7 +106,10 @@ async def main_async():
         instruction=f"""
         You are an expert at creating citizenship test questions.
         Based on the provided text from 'Chapter 1 - Danish History', generate 20 NEW multiple-choice questions.
-        Avoid duplicating the topics already covered in these existing questions: {json.dumps([q['question'] for q in existing_questions[-10:]], ensure_ascii=False)}
+        IMPORTANT: Do NOT generate questions that are already covered in the existing dataset.
+        
+        List of existing questions to avoid:
+        {json.dumps(existing_question_texts, ensure_ascii=False)}
         
         Rules:
         1. Each question must have 2 or 3 options.
@@ -172,7 +188,7 @@ async def main_async():
             q["is_verified"] = False
 
     # Combine and save
-    all_questions = existing_questions + new_questions_data
+    all_questions = existing_generated + new_questions_data
     output_data = {"questions": all_questions}
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)

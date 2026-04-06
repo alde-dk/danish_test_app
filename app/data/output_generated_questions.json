@@ -419,6 +419,426 @@
       ],
       "answer_letter": "B",
       "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken runesten fra ca. år 955 regnes for at være den første, hvor navnet 'Danmark' nævnes inden for landets grænser?",
+      "question_number": "21",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Gorm den Gamles runesten"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Harald Blåtands runesten"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Thyras runesten"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken ringborg fra vikingetiden ligger placeret på Fyn?",
+      "question_number": "22",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Aggersborg"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Nonnebakken"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Borgring"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilket sprog er forløberen for nutidens dansk og har efterladt spor i det engelske sprog med ord som 'egg' og 'window'?",
+      "question_number": "23",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Oldnordisk"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Latin"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Plattysk"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvor boede menneskene ifølge den nordiske mytologi (asatro)?",
+      "question_number": "24",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Asgård"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Midgård"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Udgård"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken dansk konge blev myrdet i Sankt Albani Kirke i Odense i 1086?",
+      "question_number": "25",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Knud den Hellige"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Valdemar Atterdag"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Erik Klipping"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad kaldtes de kontrakter, som kongen fra 1282 skulle underskrive for at dele magten med stormændene?",
+      "question_number": "26",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Håndfæstninger"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Grundlove"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Forbundslove"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken by blev i 1103 sæde for en selvstændig nordisk ærkebiskop under den katolske kirke?",
+      "question_number": "27",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Ribe"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Roskilde"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Lund"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad kaldtes den skat i middelalderen, hvor befolkningen skulle betale en tiendedel af deres produktion til kirken?",
+      "question_number": "28",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Aflad"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Tiende"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Moms"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken præst var i 1520'erne med til at udbrede Martin Luthers protestantiske ideer i Danmark?",
+      "question_number": "29",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Hans Tausen"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Hans Egede"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Ansgar"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken lov fra 1665 var det juridiske grundlag for kongens enevældige magt indtil 1849?",
+      "question_number": "30",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Jyske Lov"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Kongeloven"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Danske Lov"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken af de nuværende hovedstæder i Norden blev grundlagt af Christian 4. under navnet Kristiania?",
+      "question_number": "31",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "København"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Stockholm"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Oslo"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "I hvilket moderne land oprettede Danmark forter på Guldkysten i forbindelse med slavehandelen?",
+      "question_number": "32",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Nigeria"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Ghana"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Sydafrika"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvem ankom til Grønland i 1721 som kristen missionær med støtte fra den danske konge?",
+      "question_number": "33",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Vitus Bering"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Hans Egede"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Knud Rasmussen"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad kaldtes perioden i slutningen af 1700-tallet, hvor dansk søfart blomstrede pga. neutralitet i stormagternes krige?",
+      "question_number": "34",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Oplysningstiden"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Den Florissante Periode"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Vikingetiden"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvor gammel skulle man som mand mindst være for at have valgret ifølge Danmarks første grundlov fra 1849?",
+      "question_number": "35",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "25 år"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "30 år"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "35 år"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad kaldes det blodige slag i juli 1850, som var et af de afgørende slag under Den 1. Slesvigske Krig?",
+      "question_number": "36",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Slaget ved Isted"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Slaget ved Dybbøl"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Slaget på Reden"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilket år fandt 'Slaget på Fælleden' sted, hvor arbejdere og myndigheder tørnede sammen i København?",
+      "question_number": "37",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "1849"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "1872"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "1899"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad betalte USA den danske regering i 1917 for overtagelsen af De Dansk Vestindiske Øer?",
+      "question_number": "38",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "10 millioner dollars"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "25 millioner dollars"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "50 millioner dollars"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilket nyt præventionsmiddel blev lovligt at sælge i Danmark i 1966?",
+      "question_number": "39",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Kondomer"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "P-piller"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Spiraler"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad var det primære formål med '24-års-reglen' i udlændingepolitikken?",
+      "question_number": "40",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "At sikre at man har arbejdet i 24 år før pension"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "At modvirke tvangsægteskaber og sikre bedre integration"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "At begrænse antallet af studerende fra udlandet"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
     }
   ]
 }
