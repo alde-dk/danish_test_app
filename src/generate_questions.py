@@ -2,6 +2,7 @@ import json
 import os
 import re
 import asyncio
+import argparse
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
 from dotenv import load_dotenv
@@ -15,7 +16,6 @@ from google.genai import types
 load_dotenv()
 
 # Constants
-SOURCE_FILE = "src/extraction/chapter1.txt"
 OUTPUT_FILE = "app/data/output_generated_questions.json"
 REFERENCE_FILE = "app/data/output.json"
 MODEL_NAME = "gemini-flash-latest"
@@ -25,7 +25,7 @@ class Option(BaseModel):
     option_text: str
 
 class Question(BaseModel):
-    file_name: str = "chapter1"
+    file_name: str
     question: str
     question_number: str
     options: List[Option]
@@ -58,9 +58,14 @@ async def run_with_agent(agent: Agent, prompt: str) -> str:
                     response_text += part.text
     return response_text
 
-async def main_async():
+async def main_async(chapter: int, count: int):
     if not os.getenv("GOOGLE_API_KEY") or os.getenv("GOOGLE_API_KEY") == "YOUR_API_KEY_HERE":
         print("Please set your GOOGLE_API_KEY in the .env file.")
+        return
+
+    source_file = f"src/extraction/chapter{chapter}.txt"
+    if not os.path.exists(source_file):
+        print(f"Error: Source file {source_file} not found.")
         return
 
     # Load existing questions from both sources
@@ -96,8 +101,8 @@ async def main_async():
         except Exception:
             start_num = len(existing_generated) + 1
 
-    print("Reading source text...")
-    source_text = read_source_text(SOURCE_FILE)
+    print(f"Reading source text from {source_file}...")
+    source_text = read_source_text(source_file)
 
     # 1. Generator Agent
     generator = Agent(
@@ -105,7 +110,7 @@ async def main_async():
         model=MODEL_NAME,
         instruction=f"""
         You are an expert at creating citizenship test questions.
-        Based on the provided text from 'Chapter 1 - Danish History', generate 20 NEW multiple-choice questions.
+        Based on the provided text from 'Chapter {chapter}', generate {count} NEW multiple-choice questions.
         IMPORTANT: Do NOT generate questions that are already covered in the existing dataset.
         
         List of existing questions to avoid:
@@ -116,14 +121,14 @@ async def main_async():
         2. Only one option must be correct.
         3. The questions should be in Danish.
         4. Follow the JSON structure exactly.
-        5. Set 'file_name' to 'chapter1'.
+        5. Set 'file_name' to 'chapter{chapter}'.
         6. Start 'question_number' from {start_num}.
         
         JSON Schema:
         {{
             "questions": [
                 {{
-                    "file_name": "chapter1",
+                    "file_name": "chapter{chapter}",
                     "question": "Question text here?",
                     "question_number": "{start_num}",
                     "options": [
@@ -137,8 +142,8 @@ async def main_async():
         """
     )
 
-    print(f"Generating 20 new questions starting from #{start_num}...")
-    gen_response_text = await run_with_agent(generator, f"Text content:\n{source_text}\n\nGenerate 20 questions.")
+    print(f"Generating {count} new questions for chapter {chapter} starting from #{start_num}...")
+    gen_response_text = await run_with_agent(generator, f"Text content:\n{source_text}\n\nGenerate {count} questions.")
     
     json_match = re.search(r'\{.*\}', gen_response_text, re.DOTALL)
     if not json_match:
@@ -176,7 +181,6 @@ async def main_async():
     
     critic_response_text = await run_with_agent(critic, f"Please verify these questions:\n{q_batch_text}")
     print("Critic response received:")
-    # print(critic_response_text)
 
     # Process results
     for q in new_questions_data:
@@ -196,4 +200,9 @@ async def main_async():
     print(f"Successfully added {len(new_questions_data)} questions. Total: {len(all_questions)}. Saved to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    asyncio.run(main_async())
+    parser = argparse.ArgumentParser(description="Generate citizenship test questions from chapters.")
+    parser.add_argument("--chapter", type=int, default=1, choices=range(1, 7), help="Chapter number (1-6)")
+    parser.add_argument("--count", type=int, default=20, help="Number of questions to generate")
+    args = parser.parse_args()
+    
+    asyncio.run(main_async(args.chapter, args.count))
