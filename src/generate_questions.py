@@ -3,7 +3,8 @@ import os
 import re
 import asyncio
 import argparse
-from typing import List, Dict, Any, Optional
+import time
+from typing import List, Dict, Any, Optional, Tuple
 from pydantic import BaseModel
 from dotenv import load_dotenv
 from google.adk.agents.llm_agent import Agent
@@ -36,7 +37,8 @@ def read_source_text(file_path: str) -> str:
     with open(file_path, "r", encoding="utf-8") as f:
         return f.read()
 
-async def run_with_agent(agent: Agent, prompt: str) -> str:
+async def run_with_agent(agent: Agent, prompt: str) -> Tuple[str, Dict[str, Any]]:
+    start_time = time.perf_counter()
     runner = Runner(
         app_name="InMemoryRunner",
         agent=agent,
@@ -46,17 +48,35 @@ async def run_with_agent(agent: Agent, prompt: str) -> str:
         auto_create_session=True
     )
     response_text = ""
+    usage_metadata = {}
     content = types.Content(parts=[types.Part(text=prompt)])
+    
     async for event in runner.run_async(
         user_id="user", 
         session_id="session", 
         new_message=content
     ):
+        # Extract response text
         if hasattr(event, "content") and event.content and event.content.parts:
             for part in event.content.parts:
                 if part.text:
                     response_text += part.text
-    return response_text
+        
+        # Try to extract usage metadata if available in the event
+        # ADK might wrap the response; we look for usage_metadata
+        if hasattr(event, "usage_metadata") and event.usage_metadata:
+            usage_metadata = {
+                "prompt_token_count": getattr(event.usage_metadata, "prompt_token_count", 0),
+                "candidates_token_count": getattr(event.usage_metadata, "candidates_token_count", 0),
+                "total_token_count": getattr(event.usage_metadata, "total_token_count", 0),
+            }
+
+    duration = time.perf_counter() - start_time
+    stats = {
+        "duration_seconds": round(duration, 2),
+        "usage": usage_metadata
+    }
+    return response_text, stats
 
 async def main_async(chapter: int, count: int):
     if not os.getenv("GOOGLE_API_KEY") or os.getenv("GOOGLE_API_KEY") == "YOUR_API_KEY_HERE":
@@ -90,6 +110,10 @@ async def main_async(chapter: int, count: int):
             print(f"Warning: Could not load reference questions: {e}")
 
     existing_question_texts = [q["question"] for q in existing_generated] + [q["question"] for q in existing_reference]
+    
+    # DETERMINE INPUT SIZES
+    existing_questions_json = json.dumps(existing_question_texts, ensure_ascii=False)
+    print(f"DEBUG: Existing questions list size: {len(existing_questions_json)} chars (~{len(existing_questions_json)//4} tokens)")
 
     # Determine starting question number
     start_num = 1
@@ -103,6 +127,7 @@ async def main_async(chapter: int, count: int):
 
     print(f"Reading source text from {source_file}...")
     source_text = read_source_text(source_file)
+    print(f"DEBUG: Source text size: {len(source_text)} chars (~{len(source_text)//4} tokens)")
 
     # 1. Generator Agent
     generator = Agent(
@@ -114,7 +139,7 @@ async def main_async(chapter: int, count: int):
         IMPORTANT: Do NOT generate questions that are already covered in the existing dataset.
         
         List of existing questions to avoid:
-        {json.dumps(existing_question_texts, ensure_ascii=False)}
+        {existing_questions_json}
         
         Rules:
         1. Each question must have 2 or 3 options.
@@ -142,8 +167,12 @@ async def main_async(chapter: int, count: int):
         """
     )
 
-    print(f"Generating {count} new questions for chapter {chapter} starting from #{start_num}...")
-    gen_response_text = await run_with_agent(generator, f"Text content:\n{source_text}\n\nGenerate {count} questions.")
+    print(f"\n[STEP 1] Generating {count} new questions for chapter {chapter} starting from #{start_num}...")
+    gen_response_text, gen_stats = await run_with_agent(generator, f"Text content:\n{source_text}\n\nGenerate {count} questions.")
+    
+    print(f"Step 1 finished in {gen_stats['duration_seconds']}s")
+    if gen_stats['usage']:
+        print(f"Tokens: Prompt={gen_stats['usage']['prompt_token_count']}, Candidates={gen_stats['usage']['candidates_token_count']}, Total={gen_stats['usage']['total_token_count']}")
     
     json_match = re.search(r'\{.*\}', gen_response_text, re.DOTALL)
     if not json_match:
@@ -173,14 +202,17 @@ async def main_async(chapter: int, count: int):
         """
     )
 
-    print(f"Verifying {len(new_questions_data)} new questions in batch...")
+    print(f"\n[STEP 2] Verifying {len(new_questions_data)} new questions in batch...")
     q_batch_text = "\n\n".join([
         f"Num: {q['question_number']}\nQ: {q['question']}\nAns: {q['answer_letter']}" 
         for q in new_questions_data
     ])
     
-    critic_response_text = await run_with_agent(critic, f"Please verify these questions:\n{q_batch_text}")
-    print("Critic response received:")
+    critic_response_text, critic_stats = await run_with_agent(critic, f"Please verify these questions:\n{q_batch_text}")
+    
+    print(f"Step 2 finished in {critic_stats['duration_seconds']}s")
+    if critic_stats['usage']:
+        print(f"Tokens: Prompt={critic_stats['usage']['prompt_token_count']}, Candidates={critic_stats['usage']['candidates_token_count']}, Total={critic_stats['usage']['total_token_count']}")
 
     # Process results
     for q in new_questions_data:
@@ -197,7 +229,7 @@ async def main_async(chapter: int, count: int):
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-    print(f"Successfully added {len(new_questions_data)} questions. Total: {len(all_questions)}. Saved to {OUTPUT_FILE}")
+    print(f"\nSuccessfully added {len(new_questions_data)} questions. Total: {len(all_questions)}. Saved to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate citizenship test questions from chapters.")
