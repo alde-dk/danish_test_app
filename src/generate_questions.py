@@ -31,11 +31,21 @@ class Question(BaseModel):
     question_number: str
     options: List[Option]
     answer_letter: str
+    source_quote: str = ""
     is_verified: bool = False
 
 def read_source_text(file_path: str) -> str:
     with open(file_path, "r", encoding="utf-8") as f:
         return f.read()
+
+def get_chunks(text: str, chunk_size: int = 5000, overlap: int = 500) -> List[str]:
+    chunks = []
+    start = 0
+    while start < len(text):
+        end = start + chunk_size
+        chunks.append(text[start:end])
+        start += chunk_size - overlap
+    return chunks
 
 async def run_with_agent(agent: Agent, prompt: str) -> Tuple[str, Dict[str, Any]]:
     start_time = time.perf_counter()
@@ -56,14 +66,11 @@ async def run_with_agent(agent: Agent, prompt: str) -> Tuple[str, Dict[str, Any]
         session_id="session", 
         new_message=content
     ):
-        # Extract response text
         if hasattr(event, "content") and event.content and event.content.parts:
             for part in event.content.parts:
                 if part.text:
                     response_text += part.text
         
-        # Try to extract usage metadata if available in the event
-        # ADK might wrap the response; we look for usage_metadata
         if hasattr(event, "usage_metadata") and event.usage_metadata:
             usage_metadata = {
                 "prompt_token_count": getattr(event.usage_metadata, "prompt_token_count", 0),
@@ -72,11 +79,7 @@ async def run_with_agent(agent: Agent, prompt: str) -> Tuple[str, Dict[str, Any]
             }
 
     duration = time.perf_counter() - start_time
-    stats = {
-        "duration_seconds": round(duration, 2),
-        "usage": usage_metadata
-    }
-    return response_text, stats
+    return response_text, {"duration": round(duration, 2), "usage": usage_metadata}
 
 async def main_async(chapter: int, count: int):
     if not os.getenv("GOOGLE_API_KEY") or os.getenv("GOOGLE_API_KEY") == "YOUR_API_KEY_HERE":
@@ -88,16 +91,14 @@ async def main_async(chapter: int, count: int):
         print(f"Error: Source file {source_file} not found.")
         return
 
-    # Load existing questions from both sources
+    # Load existing questions
     existing_generated = []
     if os.path.exists(OUTPUT_FILE):
         try:
             with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 existing_generated = data.get("questions", [])
-            print(f"Loaded {len(existing_generated)} existing generated questions.")
-        except Exception as e:
-            print(f"Warning: Could not load existing questions: {e}")
+        except Exception: pass
 
     existing_reference = []
     if os.path.exists(REFERENCE_FILE):
@@ -105,136 +106,123 @@ async def main_async(chapter: int, count: int):
             with open(REFERENCE_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 existing_reference = data.get("questions", [])
-            print(f"Loaded {len(existing_reference)} existing reference questions.")
-        except Exception as e:
-            print(f"Warning: Could not load reference questions: {e}")
+        except Exception: pass
 
-    existing_question_texts = [q["question"] for q in existing_generated] + [q["question"] for q in existing_reference]
-    
-    # DETERMINE INPUT SIZES
-    existing_questions_json = json.dumps(existing_question_texts, ensure_ascii=False)
-    print(f"DEBUG: Existing questions list size: {len(existing_questions_json)} chars (~{len(existing_questions_json)//4} tokens)")
+    # Build a lookup set for normalized question text (Optimization 1)
+    existing_lookup = {re.sub(r'\W+', '', q["question"]).lower() for q in existing_generated + existing_reference}
+    print(f"DEBUG: Initialized duplicate lookup with {len(existing_lookup)} questions.")
 
     # Determine starting question number
     start_num = 1
     if existing_generated:
         try:
             nums = [int(q["question_number"]) for q in existing_generated if q["question_number"].isdigit()]
-            if nums:
-                start_num = max(nums) + 1
-        except Exception:
-            start_num = len(existing_generated) + 1
+            if nums: start_num = max(nums) + 1
+        except Exception: start_num = len(existing_generated) + 1
 
-    print(f"Reading source text from {source_file}...")
     source_text = read_source_text(source_file)
-    print(f"DEBUG: Source text size: {len(source_text)} chars (~{len(source_text)//4} tokens)")
+    chunks = get_chunks(source_text) # Optimization 2
+    print(f"DEBUG: Split chapter into {len(chunks)} chunks.")
 
-    # 1. Generator Agent
-    generator = Agent(
-        name="generator",
-        model=MODEL_NAME,
-        instruction=f"""
-        You are an expert at creating citizenship test questions.
-        Based on the provided text from 'Chapter {chapter}', generate {count} NEW multiple-choice questions.
-        IMPORTANT: Do NOT generate questions that are already covered in the existing dataset.
+    new_questions_total = []
+    chunk_idx = 0
+    
+    while len(new_questions_total) < count and chunk_idx < len(chunks):
+        current_chunk = chunks[chunk_idx]
+        questions_needed = count - len(new_questions_total)
+        batch_size = min(10, questions_needed) # Generate in batches of 10 max
         
-        List of existing questions to avoid:
-        {existing_questions_json}
+        print(f"\n--- Processing Chunk {chunk_idx+1}/{len(chunks)} (Batch: {batch_size}) ---")
         
-        Rules:
-        1. Each question must have 2 or 3 options.
-        2. Only one option must be correct.
-        3. The questions should be in Danish.
-        4. Follow the JSON structure exactly.
-        5. Set 'file_name' to 'chapter{chapter}'.
-        6. Start 'question_number' from {start_num}.
-        
-        JSON Schema:
-        {{
-            "questions": [
-                {{
-                    "file_name": "chapter{chapter}",
-                    "question": "Question text here?",
-                    "question_number": "{start_num}",
-                    "options": [
-                        {{"option_letter": "A", "option_text": "Option A"}},
-                        {{"option_letter": "B", "option_text": "Option B"}}
-                    ],
-                    "answer_letter": "A"
-                }}
-            ]
-        }}
-        """
-    )
+        generator = Agent(
+            name="generator",
+            model=MODEL_NAME,
+            instruction=f"""
+            You are an expert at creating citizenship test questions.
+            Based on the provided text chunk from 'Chapter {chapter}', generate {batch_size} NEW multiple-choice questions.
+            
+            Rules:
+            1. Each question must have 2 or 3 options.
+            2. Only one option must be correct.
+            3. The questions should be in Danish.
+            4. Follow the JSON structure exactly.
+            5. IMPORTANT: Include a 'source_quote' field containing the EXACT sentence from the text that proves the answer.
+            6. Set 'file_name' to 'chapter{chapter}'.
+            """
+        )
 
-    print(f"\n[STEP 1] Generating {count} new questions for chapter {chapter} starting from #{start_num}...")
-    gen_response_text, gen_stats = await run_with_agent(generator, f"Text content:\n{source_text}\n\nGenerate {count} questions.")
-    
-    print(f"Step 1 finished in {gen_stats['duration_seconds']}s")
-    if gen_stats['usage']:
-        print(f"Tokens: Prompt={gen_stats['usage']['prompt_token_count']}, Candidates={gen_stats['usage']['candidates_token_count']}, Total={gen_stats['usage']['total_token_count']}")
-    
-    json_match = re.search(r'\{.*\}', gen_response_text, re.DOTALL)
-    if not json_match:
-        print("Failed to parse JSON from generator response.")
-        print(gen_response_text)
-        return
-    
-    try:
-        raw_questions = json.loads(json_match.group())
-        new_questions_data = raw_questions.get("questions", [])
-    except Exception as e:
-        print(f"Error parsing JSON: {e}")
-        return
+        gen_resp, gen_stats = await run_with_agent(generator, f"Text chunk:\n{current_chunk}\n\nGenerate {batch_size} questions.")
+        print(f"Generation took {gen_stats['duration']}s ({gen_stats['usage'].get('total_token_count', 0)} tokens)")
 
-    # 2. Critic Agent (Batch Verification)
-    critic = Agent(
-        name="critic",
-        model=MODEL_NAME,
-        instruction=f"""
-        You are a fact-checker for the Danish citizenship test.
-        Your task is to verify if the answers to the provided questions are explicitly stated in the text.
+        json_match = re.search(r'\{.*\}', gen_resp, re.DOTALL)
+        if not json_match:
+            print("Failed to parse JSON. Skipping chunk.")
+            chunk_idx += 1
+            continue
+
+        try:
+            raw_batch = json.loads(json_match.group()).get("questions", [])
+        except Exception:
+            chunk_idx += 1
+            continue
+
+        # LOCAL DUPLICATE FILTERING (Optimization 1)
+        valid_batch = []
+        for q in raw_batch:
+            norm_q = re.sub(r'\W+', '', q["question"]).lower()
+            if norm_q not in existing_lookup:
+                q["question_number"] = str(start_num + len(new_questions_total) + len(valid_batch))
+                existing_lookup.add(norm_q)
+                valid_batch.append(q)
+            else:
+                print(f"DEBUG: Filtered out duplicate: {q['question'][:50]}...")
+
+        if not valid_batch:
+            chunk_idx += 1
+            continue
+
+        # CRITIC VERIFICATION (Optimization 3 - Quote based)
+        critic = Agent(
+            name="critic",
+            model=MODEL_NAME,
+            instruction="""
+            You are a fact-checker. You will be given a question, an answer, and a source quote.
+            Verify if the source quote explicitly supports the answer to the question.
+            Reply with the question number and either 'VERIFIED' or 'NOT_FOUND'.
+            """
+        )
+
+        critic_prompt = "\n\n".join([
+            f"Num: {q['question_number']}\nQ: {q['question']}\nAns: {q['answer_letter']}\nQuote: {q['source_quote']}" 
+            for q in valid_batch
+        ])
         
-        For each question, reply with its question_number and either 'VERIFIED' or 'NOT_FOUND'.
-        
-        Text content for verification:
-        {source_text}
-        """
-    )
+        print(f"Verifying {len(valid_batch)} questions using source quotes...")
+        critic_resp, critic_stats = await run_with_agent(critic, critic_prompt)
+        print(f"Verification took {critic_stats['duration']}s ({critic_stats['usage'].get('total_token_count', 0)} tokens)")
 
-    print(f"\n[STEP 2] Verifying {len(new_questions_data)} new questions in batch...")
-    q_batch_text = "\n\n".join([
-        f"Num: {q['question_number']}\nQ: {q['question']}\nAns: {q['answer_letter']}" 
-        for q in new_questions_data
-    ])
-    
-    critic_response_text, critic_stats = await run_with_agent(critic, f"Please verify these questions:\n{q_batch_text}")
-    
-    print(f"Step 2 finished in {critic_stats['duration_seconds']}s")
-    if critic_stats['usage']:
-        print(f"Tokens: Prompt={critic_stats['usage']['prompt_token_count']}, Candidates={critic_stats['usage']['candidates_token_count']}, Total={critic_stats['usage']['total_token_count']}")
+        for q in valid_batch:
+            pattern = rf"\b{q['question_number']}\b\s*[:\-]?\s*(VERIFIED|NOT_FOUND)"
+            match = re.search(pattern, critic_resp, re.IGNORECASE)
+            # Hallucination check: Quote must exist in chunk
+            if q['source_quote'] in current_chunk and match and "VERIFIED" in match.group(1).upper():
+                q["is_verified"] = True
+                new_questions_total.append(q)
+            else:
+                print(f"DEBUG: Question #{q['question_number']} failed verification or quote hallucinated.")
 
-    # Process results
-    for q in new_questions_data:
-        pattern = rf"\b{q['question_number']}\b\s*[:\-]?\s*(VERIFIED|NOT_FOUND)"
-        match = re.search(pattern, critic_response_text, re.IGNORECASE)
-        if match and "VERIFIED" in match.group(1).upper():
-            q["is_verified"] = True
-        else:
-            q["is_verified"] = False
+        chunk_idx += 1
 
     # Combine and save
-    all_questions = existing_generated + new_questions_data
-    output_data = {"questions": all_questions}
+    final_list = existing_generated + new_questions_total[:count]
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(output_data, f, indent=2, ensure_ascii=False)
+        json.dump({"questions": final_list}, f, indent=2, ensure_ascii=False)
 
-    print(f"\nSuccessfully added {len(new_questions_data)} questions. Total: {len(all_questions)}. Saved to {OUTPUT_FILE}")
+    print(f"\nDONE: Added {len(new_questions_total[:count])} questions. Total: {len(final_list)}. Saved to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate citizenship test questions from chapters.")
+    parser = argparse.ArgumentParser(description="Optimized question generator.")
     parser.add_argument("--chapter", type=int, default=1, choices=range(1, 7), help="Chapter number (1-6)")
     parser.add_argument("--count", type=int, default=20, help="Number of questions to generate")
     args = parser.parse_args()
-    
     asyncio.run(main_async(args.chapter, args.count))

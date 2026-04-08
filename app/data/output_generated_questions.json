@@ -1671,6 +1671,48 @@
       ],
       "answer_letter": "B",
       "is_verified": true
+    },
+    {
+      "file_name": "chapter4",
+      "question": "Hvad kaldes den EU-lov om databeskyttelse, som trådte i kraft i 2018 og stiller krav til, hvordan virksomheder og organisationer behandler personoplysninger?",
+      "question_number": "81",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "GDPR"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Schengen-aftalen"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Maastricht-traktaten"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter4",
+      "question": "Hvor stor en andel af bruttonationalindkomsten (BNI) giver Danmark i udviklingsbistand for at opfylde FN’s målsætning?",
+      "question_number": "82",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "0,5 procent"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "0,7 procent"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "1,2 procent"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
     }
   ]
 }
