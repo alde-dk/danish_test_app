@@ -419,6 +419,1300 @@
       ],
       "answer_letter": "B",
       "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken runesten fra ca. år 955 regnes for at være den første, hvor navnet 'Danmark' nævnes inden for landets grænser?",
+      "question_number": "21",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Gorm den Gamles runesten"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Harald Blåtands runesten"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Thyras runesten"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken ringborg fra vikingetiden ligger placeret på Fyn?",
+      "question_number": "22",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Aggersborg"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Nonnebakken"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Borgring"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilket sprog er forløberen for nutidens dansk og har efterladt spor i det engelske sprog med ord som 'egg' og 'window'?",
+      "question_number": "23",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Oldnordisk"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Latin"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Plattysk"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvor boede menneskene ifølge den nordiske mytologi (asatro)?",
+      "question_number": "24",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Asgård"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Midgård"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Udgård"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken dansk konge blev myrdet i Sankt Albani Kirke i Odense i 1086?",
+      "question_number": "25",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Knud den Hellige"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Valdemar Atterdag"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Erik Klipping"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad kaldtes de kontrakter, som kongen fra 1282 skulle underskrive for at dele magten med stormændene?",
+      "question_number": "26",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Håndfæstninger"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Grundlove"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Forbundslove"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken by blev i 1103 sæde for en selvstændig nordisk ærkebiskop under den katolske kirke?",
+      "question_number": "27",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Ribe"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Roskilde"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Lund"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad kaldtes den skat i middelalderen, hvor befolkningen skulle betale en tiendedel af deres produktion til kirken?",
+      "question_number": "28",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Aflad"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Tiende"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Moms"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken præst var i 1520'erne med til at udbrede Martin Luthers protestantiske ideer i Danmark?",
+      "question_number": "29",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Hans Tausen"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Hans Egede"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Ansgar"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken lov fra 1665 var det juridiske grundlag for kongens enevældige magt indtil 1849?",
+      "question_number": "30",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Jyske Lov"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Kongeloven"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Danske Lov"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilken af de nuværende hovedstæder i Norden blev grundlagt af Christian 4. under navnet Kristiania?",
+      "question_number": "31",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "København"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Stockholm"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Oslo"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "I hvilket moderne land oprettede Danmark forter på Guldkysten i forbindelse med slavehandelen?",
+      "question_number": "32",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Nigeria"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Ghana"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Sydafrika"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvem ankom til Grønland i 1721 som kristen missionær med støtte fra den danske konge?",
+      "question_number": "33",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Vitus Bering"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Hans Egede"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Knud Rasmussen"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad kaldtes perioden i slutningen af 1700-tallet, hvor dansk søfart blomstrede pga. neutralitet i stormagternes krige?",
+      "question_number": "34",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Oplysningstiden"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Den Florissante Periode"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Vikingetiden"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvor gammel skulle man som mand mindst være for at have valgret ifølge Danmarks første grundlov fra 1849?",
+      "question_number": "35",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "25 år"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "30 år"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "35 år"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad kaldes det blodige slag i juli 1850, som var et af de afgørende slag under Den 1. Slesvigske Krig?",
+      "question_number": "36",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Slaget ved Isted"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Slaget ved Dybbøl"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Slaget på Reden"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilket år fandt 'Slaget på Fælleden' sted, hvor arbejdere og myndigheder tørnede sammen i København?",
+      "question_number": "37",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "1849"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "1872"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "1899"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad betalte USA den danske regering i 1917 for overtagelsen af De Dansk Vestindiske Øer?",
+      "question_number": "38",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "10 millioner dollars"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "25 millioner dollars"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "50 millioner dollars"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvilket nyt præventionsmiddel blev lovligt at sælge i Danmark i 1966?",
+      "question_number": "39",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Kondomer"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "P-piller"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Spiraler"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter1",
+      "question": "Hvad var det primære formål med '24-års-reglen' i udlændingepolitikken?",
+      "question_number": "40",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "At sikre at man har arbejdet i 24 år før pension"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "At modvirke tvangsægteskaber og sikre bedre integration"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "At begrænse antallet af studerende fra udlandet"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvor mange paragraffer indeholder Danmarks Riges Grundlov?",
+      "question_number": "41",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "89"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "121"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "179"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvornår på året begynder folketingsåret normalt?",
+      "question_number": "42",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Den 1. januar"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Den første tirsdag i oktober"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Den 5. juni"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvor mange repræsentanter fra hvert parti deltager normalt i en såkaldt 'kongerunde'?",
+      "question_number": "43",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Én repræsentant"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "To repræsentanter"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Hele folketingsgruppen"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "I hvilket år blev valgretsalderen til Folketinget nedsat til de nuværende 18 år?",
+      "question_number": "44",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "1953"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "1978"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "2001"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvor mange borgere skal der som minimum stå bag et borgerforslag, før det kan lægges ud på hjemmesiden?",
+      "question_number": "45",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Én borger"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Fire borgere"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Halvtreds borgere"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvad skal den nye, sammenlagte region af Region Hovedstaden og Region Sjælland hedde fra 2027?",
+      "question_number": "46",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Region Øst"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Region Østdanmark"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Region Metropolitan"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvor mange danskere var i 2023 medlem af et politisk parti?",
+      "question_number": "47",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Cirka 110.000"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Cirka 350.000"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Cirka 650.000"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvornår fik kvinder med dansk statsborgerskab værnepligt på lige fod med mænd?",
+      "question_number": "48",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "1. januar 1953"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "5. juni 2022"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "1. juli 2025"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvem vælger de medlemmer af Rigsretten, som ikke er dommere fra Højesteret?",
+      "question_number": "49",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Regeringen"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Folketinget"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Kongen"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvor mange byretter findes der i Danmark?",
+      "question_number": "50",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "5"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "24"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "98"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvad hedder specialdomstolen i København, der især behandler sager med stort kendskab til erhvervsforhold?",
+      "question_number": "51",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Erhvervsretten"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Sø- og Handelsretten"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Landsretten"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvilken instans behandler sager om børn i alderen 10 til 14 år, der begår kriminalitet?",
+      "question_number": "52",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Byretten"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Ungdomskriminalitetsnævnet"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Statsforvaltningen"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvornår fandt de sidste henrettelser sted i Danmark?",
+      "question_number": "53",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "1892"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "1945-1950"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "1964"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvor mange folketingsmedlemmer skal sige nej til internationalt samarbejde, før spørgsmålet om suverænitetsafgivelse skal til folkeafstemning?",
+      "question_number": "54",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Over 30 medlemmer"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Mindst 60 medlemmer"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Flere end 29 medlemmer (mindre end 150 ja-stemmer)"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvem vælger Folketingets Ombudsmand?",
+      "question_number": "55",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Regeringen"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Højesteret"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Folketinget"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvad har man ifølge loven pligt til at oplyse politiet om, hvis man bliver spurgt?",
+      "question_number": "56",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Navn, adresse og fødselsdato"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Navn, beskæftigelse og partitilhørsforhold"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Kun sit fulde navn"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvad sker der normalt med en ministers 'særlige rådgivere', når ministeren forlader sit job?",
+      "question_number": "57",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "De fortsætter som neutrale embedsmænd"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "De forlader også deres job"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "De bliver automatisk rådgivere for den nye minister"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvor mange stemmeberettigede danskere er i dag medlem af et politisk parti?",
+      "question_number": "58",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Cirka hver 4."
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Cirka hver 10."
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Cirka hver 40."
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvor mange medlemmer skal der mindst deltage i en afstemning i Folketinget, for at den er gyldig?",
+      "question_number": "59",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Mindst 60"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Mindst 90"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Mindst 179"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter2",
+      "question": "Hvad kaldes en person, der af samvittighedsgrunde ikke vil aftjene værnepligt i forsvaret, men i stedet udfører samfundsnyttigt arbejde?",
+      "question_number": "60",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Frinummerhaver"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Militærnægter"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Lægdommer"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvilken placering har Danmark på listen over verdens rigeste lande målt på BNP per indbygger i 2025 ifølge IMF?",
+      "question_number": "61",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Nr. 1"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Nr. 9"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Nr. 27"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Fra 2026 indføres en ny skat i Danmark for de allerhøjeste indkomster. Hvad kaldes denne skat?",
+      "question_number": "62",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Millionærskat"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Toptopskat"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Lighedsskat"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvilket enkeltland eksporterer Danmark flest varer og tjenesteydelser til (målt i værdi)?",
+      "question_number": "63",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "USA"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Tyskland"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Kina"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvem er ordningen 'tidlig pension' opkaldt efter?",
+      "question_number": "64",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "En tidligere statsminister"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "En bryggeriarbejder"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "En kendt økonom"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvilken opgave overtog staten fra kommunerne i forbindelse med strukturreformen i 2007?",
+      "question_number": "65",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Al skatteopkrævning"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Driften af folkeskolerne"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Affaldsindsamlingen"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvor stor en andel af det danske landbrug blev i 2023 drevet økologisk?",
+      "question_number": "66",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Cirka 5 procent"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "11,4 procent"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Over 25 procent"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvor stor en del af verdens høreapparater fremstilles i Danmark?",
+      "question_number": "67",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Under 10 procent"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Over en tredjedel"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Næsten halvdelen"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvor stor en andel af de danske lønmodtagere var i 2023 medlem af en fagforening?",
+      "question_number": "68",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "45 procent"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "65 procent"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "85 procent"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvilken myndighed har ansvaret for at drive ungdomsuddannelser (som gymnasier) og de videregående uddannelser?",
+      "question_number": "69",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Kommunerne"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Regionerne"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Staten"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvor mange procent af danske skolebørn gik i 2023 i en friskole eller privat grundskole?",
+      "question_number": "70",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "19 procent"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "12 procent"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "30 procent"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvor placerer IMF (Den Internationale Valutafond) Danmark på listen over de rigeste lande blandt de 27 EU-lande i 2025?",
+      "question_number": "71",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Som det rigeste land"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Som det tredje rigeste land"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Som det niende rigeste land"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvor stor en andel af den danske befolkning var over 64 år i 2025?",
+      "question_number": "72",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "14 procent"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "21 procent"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "I hvilket år blev indkomstskatten indført som en permanent skat i Danmark?",
+      "question_number": "73",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "I 1899"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "I 1903"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "I 1933"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvor stor en andel af de 16-64-årige kvinder i Danmark var i beskæftigelse i 2025?",
+      "question_number": "74",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "65,8 procent"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "75,8 procent"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "85,8 procent"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvor stor en andel af de danske skolebørn gik i 2023 i en friskole eller privatskole?",
+      "question_number": "75",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "12 procent"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "19 procent"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "25 procent"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvilken placering havde den danske handelsflåde på verdensplan i 2024?",
+      "question_number": "76",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Verdens andenstørste"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Verdens femtestørste"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Verdens tiendestørste"
+        }
+      ],
+      "answer_letter": "C",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Frem til hvilket tidspunkt udgjorde landbrugsvarer mere end halvdelen af Danmarks samlede eksport?",
+      "question_number": "77",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Til slutningen af 1800-tallet"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Til slutningen af 1950'erne"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Til midten af 1970'erne"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvilket land importerer (køber) Danmark flest varer fra?",
+      "question_number": "78",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "USA"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Tyskland"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Kina"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvad kaldes den Forligsinstitution, som staten oprettede i 1910 for at afværge konflikter på arbejdsmarkedet, ofte i daglig tale?",
+      "question_number": "79",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Forligsmanden"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Arbejdsretten"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Ombudsmanden"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter3",
+      "question": "Hvilken myndighed overtog i 2007 ansvaret for al skatteopkrævning fra kommunerne?",
+      "question_number": "80",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "Regionerne"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Staten"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter4",
+      "question": "Hvad kaldes den EU-lov om databeskyttelse, som trådte i kraft i 2018 og stiller krav til, hvordan virksomheder og organisationer behandler personoplysninger?",
+      "question_number": "81",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "GDPR"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "Schengen-aftalen"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "Maastricht-traktaten"
+        }
+      ],
+      "answer_letter": "A",
+      "is_verified": true
+    },
+    {
+      "file_name": "chapter4",
+      "question": "Hvor stor en andel af bruttonationalindkomsten (BNI) giver Danmark i udviklingsbistand for at opfylde FN’s målsætning?",
+      "question_number": "82",
+      "options": [
+        {
+          "option_letter": "A",
+          "option_text": "0,5 procent"
+        },
+        {
+          "option_letter": "B",
+          "option_text": "0,7 procent"
+        },
+        {
+          "option_letter": "C",
+          "option_text": "1,2 procent"
+        }
+      ],
+      "answer_letter": "B",
+      "is_verified": true
     }
   ]
 }
